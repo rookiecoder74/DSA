@@ -9,8 +9,8 @@ public class merge_sort {
     }
 
     public void sort(int[] arr, int[] temp, int low, int high) {
-        if (low < high) { // base case
-            int mid = low + (high - low) / 2; // overflow condition (low + high) / 2;
+        if (low < high) {
+            int mid = low + (high - low) / 2;
             sort(arr, temp, low, mid);
             sort(arr, temp, mid + 1, high);
             merge(arr, temp, low, mid, high);
@@ -21,9 +21,9 @@ public class merge_sort {
         for (int i = low; i <= high; i++) {
             temp[i] = arr[i];
         }
-        int i = low; // traverse left sorted subarray
-        int j = mid + 1; // traverse right sorted subarray
-        int k = low; // will merge both arrays into original array (arr)
+        int i = low;
+        int j = mid + 1; 
+        int k = low; 
 
         while (i <= mid && j <= high) {
             if (temp[i] <= temp[j]) {
